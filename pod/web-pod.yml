@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privateweb2
+  labels:
+    name: privateweb
+    app: httpd
+spec:
+  containers:
+  - name: privateweb2
+    image: index.docker.io/uzzal2k5/httpd:latest
+    ports:
+    - containerPort: 80
+  imagePullSecrets:
+  - name: regsecret

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+  labels:
+    name: privateweb-svc
+    app: httpd
+spec:
+  ports:
+  - port: 80
+    name: http-privateweb
+    targetPort: 80
+  selector:
+    name: privateweb
+    app: httpd

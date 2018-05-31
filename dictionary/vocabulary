@@ -1,0 +1,11 @@
+cordon
+uncordon
+drain - To remove node from service
+taint
+selector
+label
+job
+pod
+service
+container
+
