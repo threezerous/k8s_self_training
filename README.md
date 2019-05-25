@@ -28,7 +28,7 @@ This README would normally document whatever steps are necessary to get your app
 * #####Configure Kubernetes Repository and Install
      Kubernetes packages are not available in the default CentOS 7  repositories, Use below command to configure its package repositories.
      
-     *  Install and Configure [K8S Single Master Node Cluster](https://bitbucket.org/uzzal2k5/kubernetes_training/src/e4ba9591b822ab227a0c07659ddb509c548e7f2c/kube-local/single_master_node_cluster.md?at=master)
+     *  Install and Configure [K8S Single Master Node Cluster](https://bitbucket.org/uzzal2k5/kubernetes_training/src/e4ba9591b822ab227a0c07659ddb509c548e7f2c/kube-local/single_master_node_cluster.md?at=master) Uploaded to google drive
 * How to run tests
 * Deployment instructions
 
