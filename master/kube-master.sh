@@ -1,3 +1,6 @@
+# Ensure swap is turned off (swapoff -a)
+# Ensure the host has minimum 2 CPUs
+
 #!/usr/bin/env bash
 # Step 1: Disable SELinux & setup firewall rules
 
@@ -42,6 +45,7 @@ systemctl restart docker && systemctl enable docker
 systemctl  restart kubelet && systemctl enable kubelet
 
 # Step 4: Initialize Kubernetes Master with ‘kubeadm init’
+kubeadm config images pull
 kubeadm init
 
 # Copy the [token] Using token: xxxxxxxxxxx
