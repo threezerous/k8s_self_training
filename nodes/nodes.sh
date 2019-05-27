@@ -29,6 +29,10 @@ EOF
 yum  install kubeadm docker -y
 systemctl restart docker && systemctl enable docker
 
-# Step 4: Now Join worker nodes to master node
+# Step 4: Disable swap and start kubelet service
+swapoff -a
+systemctl enable kubelet.service
+
+# Step 5: Now Join worker nodes to master node
 
 kubeadm join --token xxxxxxxxxxxxxx 192.168.1.30:6443
