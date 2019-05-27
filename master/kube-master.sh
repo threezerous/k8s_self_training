@@ -46,17 +46,18 @@ systemctl  restart kubelet && systemctl enable kubelet
 
 # Step 4: Initialize Kubernetes Master with ‘kubeadm init’
 kubeadm config images pull
-kubeadm init
+kubeadm init OR
+kubeadm init --apiserver-advertise-address 192.168.56.101
 
 # Copy the [token] Using token: xxxxxxxxxxx
 # This will need to join node with master
 
 
-# run following as root
+# run following as regular user
 
 mkdir -p $HOME/.kube
-cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-chown $(id -u):$(id -g) $HOME/.kube/config
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # Step 5: Deploy pod network to the cluster
 kubectl get nodes
