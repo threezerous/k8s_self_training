@@ -35,13 +35,12 @@ enabled=1
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
-#    https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+   https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
 # Step 3: Install Kubeadm and Docker
 
-yum install -y --enablerepo=virt7-docker-common-release kubeadm kubernetes etcd  docker -y
-yum install -y *rhsm*
+yum install kubeadm docker -y
 systemctl restart docker && systemctl enable docker
 systemctl  restart kubelet && systemctl enable kubelet
 
