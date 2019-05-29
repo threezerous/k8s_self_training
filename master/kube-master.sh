@@ -40,9 +40,8 @@ EOF
 
 # Step 3: Install Kubeadm and Docker
 
-yum install -y --enablerepo=virt7-docker-common-release
-yum install kubeadm kubernetes etcd  docker -y
-yum instaall -y *rhsm*
+yum install -y --enablerepo=virt7-docker-common-release kubeadm kubernetes etcd  docker -y
+yum install -y *rhsm*
 systemctl restart docker && systemctl enable docker
 systemctl  restart kubelet && systemctl enable kubelet
 
