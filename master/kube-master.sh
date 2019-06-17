@@ -40,14 +40,14 @@ EOF
 
 # Step 3: Install Kubeadm and Docker
 
-yum install kubeadm docker -y
+yum install kubeadm docker etcd -y
 systemctl restart docker && systemctl enable docker
 systemctl  restart kubelet && systemctl enable kubelet
 
 # Step 4: Initialize Kubernetes Master with ‘kubeadm init’
 kubeadm config images pull
 kubeadm init OR
-kubeadm init --apiserver-advertise-address 192.168.56.101
+kubeadm init --apiserver-advertise-address 192.168.101.3
 
 # Copy the [token] Using token: xxxxxxxxxxx
 # This will need to join node with master
