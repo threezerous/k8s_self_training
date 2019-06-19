@@ -34,7 +34,7 @@ Examples:
   # List a single replication controller with specified NAME in ps output format.
   kubectl get replicationcontroller web
 
-  # List a single pod in JSON output format.
+  # List a single pod in JSON output format
   kubectl get -o json pod web-pod-13je7
 
   # List a pod identified by type and name specified in "pod.yaml" in JSON output format.
