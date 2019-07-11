@@ -1,9 +1,3 @@
-# Ensure swap is turned off (swapoff -a)
-# Ensure the host has minimum 2 CPUs
-# Ensure all kube installs are 1.15.x or higher (except cni)
-
-#!/usr/bin/env bash
-
 hostnamectl set-hostname 'k8s-master'
 setenforce 0
 sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux

@@ -1,4 +1,11 @@
+# Ensure swap is turned off (swapoff -a)
+# Ensure the host has minimum 2 CPUs
+# Ensure all kube installs are 1.15 or higher (except cni)
+
+
 #!/usr/bin/env bash
+
+hostnamectl set-hostname 'k8s-node'
 
 # Step 1: Disable SELinux & configure firewall rules on both the nodes
 setenforce 0
@@ -34,6 +41,6 @@ systemctl restart docker && systemctl enable docker
 swapoff -a
 systemctl enable kubelet.service
 
-# Step 5: Now Join worker nodes to master node
+# Step 5: Now Join worker nodes to master node (Copy the command from master after kubeadm init has been run)
 
 kubeadm join --token xxxxxxxxxxxxxx 192.168.1.30:6443
